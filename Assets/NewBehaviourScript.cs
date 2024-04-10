@@ -28,7 +28,8 @@ public class NewBehaviourScript : MonoBehaviour
         var resSysInit_system2 = FMODUnity.RuntimeManager.CoreSystem2.init(2, FMOD.INITFLAGS.NORMAL, (System.IntPtr)0);
 
         var soundResult_test = FMODUnity.RuntimeManager.CoreSystem2.createSound(Application.streamingAssetsPath + "/nicebeatzprod._-_Et_Je_Dance.mp3", FMOD.MODE.CREATESTREAM, out var sound_test);
-        //FMODUnity.RuntimeManager.CoreSystem2.setDriver(1);
+        FMODUnity.RuntimeManager.CoreSystem.setDriver(1);
+        FMODUnity.RuntimeManager.CoreSystem2.setDriver(0);
         playResult = FMODUnity.RuntimeManager.CoreSystem2.playSound(sound_test, cgSys1, false, out chaSys1);
     }
 
